@@ -14,29 +14,47 @@ using System.Windows.Shapes;
 
 namespace Diplom_Kuznetsov
 {
-    /// <summary>
-    /// Логика взаимодействия для Admin.xaml
-    /// </summary>
+
     public partial class Admin : Window
     {
+
+
+
         public Admin()
         {
             InitializeComponent();
+            DStrah.ItemsSource = BD_DKuznetsovEntities.GetContext().Vidi_strahovki.ToList();
         }
 
-        private void Zak_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            Close();
         }
 
         private void Create_Click(object sender, RoutedEventArgs e)
         {
+            Pages.Add_Admin_zayavki add_Admin_Zayavki = new Pages.Add_Admin_zayavki();
+            add_Admin_Zayavki.Show();
+        }
+
+        private void BtnEditStrahovka_Click(object sender, RoutedEventArgs e)
+        {
+            Pages.AddEdit_vidi_strahovki addEdit_Vidi_Strahovki = new Pages.AddEdit_vidi_strahovki(null);
+            addEdit_Vidi_Strahovki.Show();
 
         }
+
+        private void Window_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (Visibility == Visibility.Visible)
+            {
+                BD_DKuznetsovEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(u => u.Reload());
+                DStrah.ItemsSource = BD_DKuznetsovEntities.GetContext().Vidi_strahovki.ToList();
+            }
+        }
+           
     }
 }

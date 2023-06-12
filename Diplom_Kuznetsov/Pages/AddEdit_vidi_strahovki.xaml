@@ -1,0 +1,37 @@
+﻿<Window x:Class="Diplom_Kuznetsov.Pages.AddEdit_vidi_strahovki"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Diplom_Kuznetsov.Pages"
+        mc:Ignorable="d"
+        Title="Заполнение страховки" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            
+
+            <TextBlock Text="Название" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Margin="0,0,10,0"/>
+            <TextBox x:Name="TBoxFIO" Height="30" Width="200" Margin="0,0,0,10" Text="{Binding Nazvanie}"/>
+
+            <TextBlock Text="Описание" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Margin="0,0,10,0"/>
+            <TextBox x:Name="TBoxTelefon" Height="30" Width="200" Margin="0,0,0,10" Text="{Binding Description}"/>
+
+            <TextBlock Text="Стоимость" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Margin="0,0,10,0"/>
+            <TextBox x:Name="TBoxDT" Height="30" Width="200" Margin="0,0,0,10" Text="{Binding Money}"/>
+
+            <TextBlock Text="Дата действия" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Margin="0,0,10,0"/>
+            <TextBox x:Name="TBoxAdres" Height="30" Width="200" Margin="0,0,0,10" Text="{Binding Date_deistvia}"/>
+
+            
+
+            
+
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="Close" Click="Close_Click"  Content="Назад" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30" Margin="0,0,10,0"/>
+                <Button x:Name="Save" Click="Save_Click" Content="Добавить" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30"/>
+            </StackPanel>
+
+
+        </StackPanel>
+    </Grid>
+</Window>

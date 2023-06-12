@@ -12,21 +12,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Diplom_Kuznetsov
+namespace Diplom_Kuznetsov.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для User.xaml
+    /// Логика взаимодействия для Add_Admin_zayavki.xaml
     /// </summary>
-    public partial class User : Window
+    public partial class Add_Admin_zayavki : Window
     {
-        public User()
+        public Add_Admin_zayavki()
         {
             InitializeComponent();
-        }
-
-        private void Back_Click(object sender, RoutedEventArgs e)
-        {
-            Manager.MainFrame.Navigate(new Pages.Log());
+            Manager.MainFrame = myFrame;
+            myFrame.Navigate(new Pages.Create());
         }
     }
 }

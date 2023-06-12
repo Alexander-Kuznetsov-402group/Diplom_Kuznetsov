@@ -23,6 +23,7 @@ namespace Diplom_Kuznetsov
         public MainWindow()
         {
             InitializeComponent();
+            AppConnect.modelOdb = new BD_DKuznetsovEntities();
             Manager.MainFrame = MainFrame;
             Manager.MainFrame.Navigate(new Pages.Log());
         }

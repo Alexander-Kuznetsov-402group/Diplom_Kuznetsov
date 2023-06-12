@@ -24,12 +24,40 @@ namespace Diplom_Kuznetsov.Pages
 
         private void Regist_Click(object sender, RoutedEventArgs e)
         {
-            Manager.MainFrame.Navigate(new Pages.Reg());
+            Manager.MainFrame.Navigate(new Pages.Reg(null));
         }
 
         private void Next_Click(object sender, RoutedEventArgs e)
         {
-            
+            try
+            {
+                var userObj = AppConnect.modelOdb.User.FirstOrDefault(x => x.Login == tb1.Text && x.Password == tb2.Password);
+                if (userObj == null) 
+                {
+                    MessageBox.Show("Такого пользователя нет!", "Ошибка при авторизации", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else
+                {
+                    switch (userObj.Id_Role)
+                    {
+                        case 1: MessageBox.Show("Здравствуйте, Агент007", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                            Admin admin = new Admin();
+                            admin.Show();
+                            break;
+                        case 2:
+                            MessageBox.Show("Здравствуйте, Пользователь", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                            Users users = new Users();
+                            users.Show();
+                            break;
+                        default: MessageBox.Show("Данные не обнаружены!", "Уведомление", MessageBoxButton.OK,MessageBoxImage.Warning); break;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ошибка " + ex.Message.ToString() + "Критическая работа приложения!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+
         }
     }
 }

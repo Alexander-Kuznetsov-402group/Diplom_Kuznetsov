@@ -9,7 +9,7 @@
       Title="Log">
 
     <Grid>
-        <TextBox x:Name="tb1" Grid.Row="2" Height="25" Margin="25,55,25,0" VerticalAlignment="Top"/>
+        <TextBox Name="tb1"  Grid.Row="2" Height="25" Margin="25,55,25,0" VerticalAlignment="Top"/>
         <TextBlock IsHitTestVisible="False" FontSize="14" Text="Введите эл. почту или или логин" Grid.Row="2" Margin="37,58,0,0" VerticalAlignment="Top">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
@@ -22,19 +22,8 @@
                 </Style>
             </TextBlock.Style>
         </TextBlock>
-        <TextBox x:Name="tb2" Grid.Row="2" Height="25" Margin="25,100,25,0" VerticalAlignment="Top"/>
-        <TextBlock IsHitTestVisible="False" FontSize="14" Text="Введите пароль" Grid.Row="2" Margin="40,103,10,0" VerticalAlignment="Top">
-            <TextBlock.Style>
-                <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Visibility" Value="Collapsed"/>
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding Text, ElementName=tb2}" Value="">
-                            <Setter Property="Visibility" Value="Visible"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBlock.Style>
-        </TextBlock>
+        <PasswordBox  x:Name="tb2" Grid.Row="2" Height="25" Margin="25,100,25,0" VerticalAlignment="Top"/>
+        
         <Button Content="Зарегистрироваться" x:Name="Regist" Grid.Row="2" Height="25" Width="130" VerticalAlignment="Top" Margin="210,150,25,0" Click="Regist_Click"/>
         <Button Content="Войти" x:Name="Next" Grid.Row="2" Height="25" Width="130" VerticalAlignment="Top" Margin="25,150,210,0" Click="Next_Click"/>
     </Grid>

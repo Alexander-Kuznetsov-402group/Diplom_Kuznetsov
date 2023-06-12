@@ -15,14 +15,17 @@ using System.Windows.Shapes;
 
 namespace Diplom_Kuznetsov.Pages
 {
-    /// <summary>
-    /// Логика взаимодействия для Reg.xaml
-    /// </summary>
+  
     public partial class Reg : Page
     {
-        public Reg()
+
+        
+
+        public Reg(User selectedUser)
         {
             InitializeComponent();
+          
+            
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -32,7 +35,27 @@ namespace Diplom_Kuznetsov.Pages
 
         private void Create_Click(object sender, RoutedEventArgs e)
         {
-
+            if (AppConnect.modelOdb.User.Count(x => x.Login == tb1.Text) > 0)
+            {
+                MessageBox.Show("Пользователя с таким логином есть!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+            try
+            {
+                User userObj = new User()
+                {
+                    Login = tb1.Text,
+                    Password = tb2.Password,
+                    Id_Role = 2
+                };
+                AppConnect.modelOdb.User.Add(userObj);
+                AppConnect.modelOdb.SaveChanges();
+                MessageBox.Show("Данные успешно добавлены!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка при добавлении данных!", "Уведомление", MessageBoxButton.OK,MessageBoxImage.Error); 
+            }
         }
     }
 }

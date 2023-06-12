@@ -1,11 +1,11 @@
-﻿<Window x:Class="Diplom_Kuznetsov.Admin"
+﻿<Window x:Class="Diplom_Kuznetsov.Pages.Users"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Diplom_Kuznetsov"
+        xmlns:local="clr-namespace:Diplom_Kuznetsov.Pages"
         mc:Ignorable="d"
-        Title="Окно администратора" Height="460" Width="1000" MinHeight="460" MinWidth="1000"  IsVisibleChanged="Window_IsVisibleChanged" WindowStartupLocation="CenterScreen">
+        Title="Страховое агенство" Height="460" Width="1000" MinHeight="460" MinWidth="1000" IsVisibleChanged="Window_IsVisibleChanged" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -21,9 +21,9 @@
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Content="Оформить страховку"  x:Name="Create" Grid.Row="1" Height="30" Width="200" Click="Create_Click" Margin="0,0,10,0"/>
-            <Button Content="Вернуться на окно авторизации"  x:Name="Back" Grid.Row="1" Height="30" Width="200" Click="Back_Click"/>
-            <Button Content="Добавить страховку"  x:Name="BtnEditStrahovka" Click="BtnEditStrahovka_Click" Grid.Row="1" Height="30" Width="200"  Margin="10,0,0,0"/>
+            
+            <Button Content="Вернуться на окно авторизации"  x:Name="Back" Height="30" Width="200" Click="Back_Click"/>
         </StackPanel>
+        <Button x:Name="BtOfis" Click="BtOfis_Click" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Height="30" Width="200" Margin="0,0,10,0"  Content = "Офисы страхования"/>
     </Grid>
 </Window>
