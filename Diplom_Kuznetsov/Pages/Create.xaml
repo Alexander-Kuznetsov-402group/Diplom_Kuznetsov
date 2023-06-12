@@ -33,7 +33,7 @@
         </DataGrid>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button x:Name="BtClose" Content="Назад" Click="BtClose_Click"  Margin="0,0,10,0" Width="100" Height="30" FontSize="18"/>
-            <Button x:Name="BtDelete" Content="Удалить" Click="BtDelete_Click"  Margin="0,0,10,0" Width="100" Height="30" FontSize="17"/>
+            <Button x:Name="BtDelete" Content="Удалить" Click="BtDelete_Click"  Margin="0,0,10,0" Width="100" Height="30" FontSize="18"/>
             <Button x:Name="BtAdd" Content="Добавить" Click="BtAdd_Click"  Width="100" Height="30" FontSize="18"/>
         </StackPanel>
     </Grid>
