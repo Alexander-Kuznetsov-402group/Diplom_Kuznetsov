@@ -41,7 +41,7 @@ namespace Diplom_Kuznetsov.Pages
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
     }
 }

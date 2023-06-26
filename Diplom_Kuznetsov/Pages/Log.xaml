@@ -23,8 +23,9 @@
             </TextBlock.Style>
         </TextBlock>
         <PasswordBox  x:Name="tb2" Grid.Row="2" Height="25" Margin="25,100,25,0" VerticalAlignment="Top"/>
-        
+
         <Button Content="Зарегистрироваться" x:Name="Regist" Grid.Row="2" Height="25" Width="130" VerticalAlignment="Top" Margin="210,150,25,0" Click="Regist_Click"/>
         <Button Content="Войти" x:Name="Next" Grid.Row="2" Height="25" Width="130" VerticalAlignment="Top" Margin="25,150,210,0" Click="Next_Click"/>
+        <Button Content="Войти как гость" x:Name="Guest" Height="25" VerticalAlignment="Top" Margin="242,200,242,0" Click="Guest_Click"/>
     </Grid>
 </Page>

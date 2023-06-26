@@ -17,7 +17,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition Height="100"/>
-            <RowDefinition Height="300"/>
+            <RowDefinition Height="380"/>
         </Grid.RowDefinitions>
         <Grid Name="ToolBar" Background="Transparent" Grid.Row="0" MouseDown="ToolBar_MouseDown">
             <Polygon Fill="White" Opacity="0.5"

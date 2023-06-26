@@ -59,5 +59,11 @@ namespace Diplom_Kuznetsov.Pages
             }
 
         }
+
+        private void Guest_Click(object sender, RoutedEventArgs e)
+        {
+            Users users = new Users();
+            users.Show();
+        }
     }
 }

@@ -37,7 +37,7 @@ namespace Diplom_Kuznetsov.Pages
 
         private void BtClose_Click(object sender, RoutedEventArgs e)
         {
-            
+            Manager.MainFrame.Navigate(new Admin());
         }
 
         private void BtAdd_Click(object sender, RoutedEventArgs e)
@@ -68,6 +68,12 @@ namespace Diplom_Kuznetsov.Pages
                     MessageBox.Show(ex.Message.ToString());
                 }
             }
+        }
+
+        private void Button_Pehat_Click(object sender, RoutedEventArgs e)
+        {
+            Pages.Pechat pechat =  new Pages.Pechat();
+            pechat.Show();
         }
     }
 }
